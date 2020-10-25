@@ -51,11 +51,13 @@ body{
     margin: 10px auto;
     padding: 5px 10px;
     background-color: tomato;
-    border: 1px solid darkred;
-    border-radius: 2px;
+    border: 2px solid black;
+    border-radius: 4px;
     outline:none;
     font-size: large;
     margin-left: 5px;
+    font-weight: bold;
+    color: white;
 }
 
 .button{

@@ -17,7 +17,7 @@ function create_grids(rows, cols) {
         container.appendChild(grids);
         main.appendChild(container);
     }
-    console.log(main);
+    // console.log(main);
 }
 
 // create_grids(40,40);
@@ -37,11 +37,6 @@ function color_it(e){
 function user_values(e){
     var rows=document.querySelector('#get_rows').value;
     var cols=document.querySelector('#get_cols').value;
-    // if ((rows||cols)>100){
-    //     return null;
-    // }else{
-    //     return [rows,cols];
-    // }
     return [rows,cols];
 
 }
@@ -49,9 +44,17 @@ function user_values(e){
 document.querySelector('#create').addEventListener('click',create);
 
 function create(e){
+    var main=document.querySelector('.main');
+    var container=document.querySelectorAll('.container');
+    for(var i=0; i<container.length; i++){
+        main.removeChild(container[i]);
+    }
     var values=user_values();
-    var rows=values[0];
-    var cols=values[1];
+    var rows=parseInt(values[0]);
+    var cols=parseInt(values[1]);
+
+    console.log(rows,"rows");
+    // console.log(typeof(rows));
     if ((rows||cols)>100){
         alert('Pleaser enter a value smaller than 100 :(');
     }else{
@@ -60,12 +63,3 @@ function create(e){
     
 }
 
-document.querySelector('#reset').addEventListener('click',reset);
-
-function reset(){
-    var main=document.querySelector('.main');
-    var container=document.querySelectorAll('.container');
-    for(var i=0; i<container.length; i++){
-        main.removeChild(container[i]);
-    }
-}
